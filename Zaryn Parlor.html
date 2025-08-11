@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaryn Salon Parlor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdf6f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .logo {
+      height: 80px;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #d4af37;
+      border-bottom: 1px solid #d4af37;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    #offers p {
+      font-size: 1.2rem;
+      color: #c1440e;
+      font-weight: bold;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #d4af37;
+    }
+
+    #contact a {
+      color: #c1440e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #d4af37;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      background-color: #d4af37;
+      color: white;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    #map {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Zaryn Logo" class="logo">
+    <h1>ZARYN</h1>
+    <p>Urembo Bila Kasi</p>
+  </header>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Weaving</li>
+      <li>Wash & Blowdry</li>
+      <li>Braiding</li>
+      <li>Artificial Dreadlocks</li>
+      <li>Retouch</li>
+      <li>Facial</li>
+      <li>Nail Tips</li>
+      <li>Gumgel</li>
+      <li>Builder Gel</li>
+      <li>Acrylics</li>
+      <li>Manicure & Pedicure</li>
+      <li>Sisterlocks</li>
+    </ul>
+  </section>
+
+  <section id="offers">
+    <h2>Special Offers</h2>
+    <p>10% OFF from 4th - 17th August</p>
+    <p>Gel @ KES 499 | Gel A @ KES 699</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="images">
+      <img src="img1.jpeg" alt="Nail Art">
+      <img src="img2.jpeg" alt="Braiding">
+      <img src="img3.jpeg" alt="Blowdry">
+      <img src="img4.jpeg" alt="Back of Hair">
+      <img src="img5.jpeg" alt="Facial">
+      <img src="img6.jpeg" alt="Gel Nails">
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book a Session</h2>
+    <form id="bookingForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="service">Service:</label>
+      <select id="service" name="service">
+        <option>Weaving</option>
+        <option>Wash & Blowdry</option>
+        <option>Braiding</option>
+        <option>Facial</option>
+        <option>Nails</option>
+      </select>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="message">Message (optional):</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Location: Voi Town next to Baraka Bookshop</p>
+    <p>Phone: <a href="tel:+254799541265">0799 541 265</a></p>
+    <div id="map"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Zaryn Salon Parlor</p>
+  </footer>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+      alert(`Thank you, ${name}! Your booking for ${service} on ${date} has been received.`);
+    });
+
+    function initMap() {
+      const location = { lat: -3.3963, lng: 38.5558 }; // Approx Voi, Kenya
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: location
+      });
+      new google.maps.Marker({ position: location, map: map });
+    }
+  </script>
+  <!-- Replace YOUR_REAL_API_KEY with your actual Google Maps API key -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_REAL_API_KEY&callback=initMap"></script>
+</body>
+</html>
